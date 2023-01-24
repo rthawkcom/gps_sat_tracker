@@ -1,4 +1,4 @@
-# gps_tracker
+# gps_sat_tracker
 Plots GPS satellites on a webpage based on input from a common USB GPS module.
 
 Using a common USB plug in GPS module, data is retrieved from the module and displayed on a webpage using HTML5 Canvas.
