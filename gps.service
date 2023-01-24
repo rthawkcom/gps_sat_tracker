@@ -1,0 +1,24 @@
+# 1. Place in systemd/system/multi-user.target.wants/gps.service
+# 2. Adjust the file paths as needed under [SERVICE] tag seen below.
+# 2. Run "sudo systemctl deamon-reload" from the command line to load the service.
+# 3. Use "sudo systemctl XXXXXX gps" where XXXX = start, stop or status as needed.
+
+[Unit]
+Description=Monitor GPS satellites for position. 
+After=network.target
+StartLimitBurst=3600
+StartLimitIntervalSec=60
+
+[Service]
+Type=simple
+WorkingDirectory=/www
+ExecStart= perl /www/gps_engine.pl 
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+User=root
+Group=root
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
+
