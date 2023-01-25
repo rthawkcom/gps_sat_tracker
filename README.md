@@ -1,9 +1,9 @@
 # gps_sat_tracker
-Plots GPS satellites on a webpage based on input from a common USB GPS module.
+Tracks GPS satellites in real time and plots their location in space on a webpage HTML5 canvas, based on input from a common USB GPS module such as this one: 
 
 https://www.amazon.com/gp/product/B01EROIUEW/
 
-Using a common USB plug in GPS module, data is retrieved from the module and displayed on a webpage using HTML5 Canvas.
+This actually tracks their location in real time.  It does NOT use TLE data in an attempt to guess where they might be.  It will also return precision time based on satellite data, so could also be used for an NTP server.
 
 There are two parts:  
 
